@@ -14,6 +14,16 @@ The products are described in an Algorithm Theoretical Basis Document that is av
 
 Jupyter notebooks that demonstrate the algorithm are in the [notebooks](./notebooks/) directory.  A good place to start is [here](./notebooks/look_at_ATL15_nc.ipynb).
 
+## Installation
+
+Create the conda environment from `environment.yml`, then run `pip install .` in this folder; pip fetches LSsurf, SMBcorr and pointCollection from GitHub over https (no SSH key needed), and building LSsurf needs a C compiler. The mask files in `masks/` are stored with Git LFS.
+
+```sh
+conda env create -f environment.yml
+conda activate ATL14
+pip install .
+```
+
 ## Contributing Code or Examples
 
 We follow a standard Forking Workflow for code changes and additions.
