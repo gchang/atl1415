@@ -21,8 +21,8 @@ def pad_mask_canvas(D, N):
     right=np.arange(0, N*dx, dx)
     x1=np.unique(np.concatenate([left+D.x[0], D.x, D.x[-1]+right]))
     y1=np.unique(np.concatenate([left+D.y[0], D.y, D.y[-1]+right]))
-    cols=np.flatnonzero(np.in1d(x1, D.x))
-    rows=np.flatnonzero(np.in1d(y1, D.y))
+    cols=np.flatnonzero(np.isin(x1, D.x))
+    rows=np.flatnonzero(np.isin(y1, D.y))
     z1=np.zeros([y1.size, x1.size], dtype='bool')
     z1[rows[0]:rows[-1]+1,cols[0]:cols[-1]+1]=D.z.astype('bool')
     return pc.grid.data().from_dict({'x':x1, 'y':y1,'z':z1})
@@ -67,7 +67,7 @@ if args.region_file is not None:
     with open(args.region_file,'r') as fh:
         for line in fh:
             m = line_re.search(line)
-            temp[m.group(1)]=[np.float(m.group(2)), np.float(m.group(3))]
+            temp[m.group(1)]=[float(m.group(2)), float(m.group(3))]
     XR=temp['XR']
     YR=temp['YR']
 

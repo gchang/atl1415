@@ -625,16 +625,16 @@ def mask_components_by_time(dz):
                 if sampled:
                     last_epoch[comp]=t_slice
 
-    last_epoch_map=np.zeros_like(dz.cell_area)+np.NaN
-    first_epoch_map=np.zeros_like(dz.cell_area)+np.NaN
+    last_epoch_map=np.zeros_like(dz.cell_area)+np.nan
+    first_epoch_map=np.zeros_like(dz.cell_area)+np.nan
 
     for comp in range(1, n_components):
         last_epoch_map[components==comp]=last_epoch[comp]
         first_epoch_map[components==comp]=first_epoch[comp]
 
     for t_slice in range(dz.dz.shape[2]):
-        dz.dz[:,:,t_slice][t_slice < first_epoch_map]=np.NaN
-        dz.dz[:,:,t_slice][t_slice > last_epoch_map]=np.NaN
+        dz.dz[:,:,t_slice][t_slice < first_epoch_map]=np.nan
+        dz.dz[:,:,t_slice][t_slice > last_epoch_map]=np.nan
 
 
 def interp_ds(ds, scale):
