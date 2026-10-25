@@ -35,8 +35,8 @@ dependencies = [
     "imageio",
     "pyTMD",
     "pointCollection @git+https://github.com/SmithB/pointCollection.git",
-    "LSsurf @ git+ssh://git@github.com/smithb/LSsurf.git",
-    "SMBcorr @ git+ssh://git@github.com/smithb/SMBcorr.git"
+    "LSsurf @ git+https://github.com/smithb/LSsurf.git@04abfbb1030f39ad27d429f3aadda8e88943e10c",
+    "SMBcorr @ git+https://github.com/smithb/SMBcorr.git@9e99f7ba608e13dc20a9759593da8764324f6c02"
 ]
 
 classifiers=[
