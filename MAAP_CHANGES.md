@@ -44,6 +44,10 @@ Install steps (the README had none).
 
 The masks under `masks/` are Git LFS files (about 974 MB in all). This copy does not hold the LFS objects itself, so `.lfsconfig` points Git LFS at the original repository's LFS store (`https://github.com/SmithB/ATL1415.git/info/lfs`). A clone with Git LFS installed then downloads the masks from there, exactly as a clone of the original does. Without `.lfsconfig`, Git LFS would look for the objects in this copy and fail. No mask file changed.
 
+## 2026-10-25: release 006 parameter file
+
+`default_args/` shipped parameter files only up to `rel_003.txt`, whose time span (2018.75 to 2023.25) and settings belong to release 003. `default_args/rel_006_0331.txt` is copied unchanged from the author's `on_s3` branch (commit fa0afc5ce5b6abdda92967facca1fd42a299a0b5). These are the parameters of the ATL14/ATL15 release 006 products now at NSIDC (`-t=2018.75,2026.5`, `--reference_time=2020`, `--max_iterations=3`). The code on `main` ignores three of its keys: `--ATL11xo_version`, `--previous_product_top` (a path on the authors' cluster) and `--t_crop`. This is the parameter set the Check below used. No code changed.
+
 ## Check
 
 On 2026-10-25, in a fresh conda environment with the packages in `environment.yml` (Python 3.12, conda-forge: numpy 2.5.4, scipy 1.18.1, GDAL 3.13.3, h5py 3.16.0, SuiteSparse), from a fresh clone of this repository: `pip install .` built ATL1415 and fetched LSsurf, SMBcorr, pointCollection and PySPQR over https with no SSH key (57 s). The default branch has no tests (`testpaths = ["test"]` names a folder that does not exist).
