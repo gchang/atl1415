@@ -40,6 +40,10 @@ The superseded copies in `scripts/old/` are left alone. Not changed here because
 
 Install steps (the README had none).
 
+## 2026-10-25: masks fetched from the original project's Git LFS store
+
+The masks under `masks/` are Git LFS files (about 974 MB in all). This copy does not hold the LFS objects itself, so `.lfsconfig` points Git LFS at the original repository's LFS store (`https://github.com/SmithB/ATL1415.git/info/lfs`). A clone with Git LFS installed then downloads the masks from there, exactly as a clone of the original does. Without `.lfsconfig`, Git LFS would look for the objects in this copy and fail. No mask file changed.
+
 ## Check
 
 On 2026-10-25, in a fresh conda environment with the packages in `environment.yml` (Python 3.12, conda-forge: numpy 2.5.4, scipy 1.18.1, GDAL 3.13.3, h5py 3.16.0, SuiteSparse), from a fresh clone of this repository: `pip install .` built ATL1415 and fetched LSsurf, SMBcorr, pointCollection and PySPQR over https with no SSH key (57 s). The default branch has no tests (`testpaths = ["test"]` names a folder that does not exist).
