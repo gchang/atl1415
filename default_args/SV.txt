@@ -1,0 +1,3 @@
+--mask_file=RGI_reduced/07_rgi60_Svalbard_reduced.db
+--region=SV
+--DEM_tol=200

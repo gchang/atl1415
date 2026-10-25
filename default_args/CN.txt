@@ -1,0 +1,2 @@
+--mask_file=RGI_reduced/03_rgi60_ArcticCanadaNorth_reduced.db
+--region=CN

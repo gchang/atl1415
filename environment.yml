@@ -1,0 +1,16 @@
+name: ATL14
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - suitesparse
+  - pip
+  - scipy
+  - numpy
+  - h5py
+  - matplotlib
+  - gdal
+  - ipykernel
+  - cython
+  - tmux
+  - netcdf4

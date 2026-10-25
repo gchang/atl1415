@@ -1,0 +1,2 @@
+--mask_file=RGI_reduced/09_rgi60_RussianArctic_reduced.db
+--region=RA

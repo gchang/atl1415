@@ -1,0 +1,2 @@
+--mask_file=RGI_reduced/06_rgi60_Iceland_reduced.db
+--region=IS
